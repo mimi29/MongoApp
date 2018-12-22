@@ -44,8 +44,9 @@ db.once("open", function() {
 });
 // Start the server
 //app.listen(PORT, function() {
+var PORT = 5000;
 console.log(process.env.PORT);
-var PORT = 3000;
-app.listen(PORT || 6000, function() {
+
+app.listen(process.env.PORT ||PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
