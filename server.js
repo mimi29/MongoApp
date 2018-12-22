@@ -11,7 +11,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3000;
+//var PORT = 3000;
 
 // Initialize Express
 var app = express();
@@ -40,9 +40,12 @@ db.on("error", function(error) {
 });
 
 db.once("open", function() {
-	console.log("Mongoose connection successful.");
+	console.log("Mongoose connection successful!");
 });
 // Start the server
-app.listen(PORT, function() {
+//app.listen(PORT, function() {
+console.log(process.env.PORT);
+var PORT = 3000;
+app.listen(PORT || 6000, function() {
   console.log("App running on port " + PORT + "!");
 });
